@@ -45,8 +45,10 @@ app.get("/compose", (req,res) => {
 })
 
 app.post("/compose", (req, res) => {
-  let post = req.body.post
-  console.log(post)
+  let post = {postTitle: req.body.postTitle,
+    postBody: req.body.postBody
+  }
+  console.log(post.postTitle, post.postBody)
 })
 
 
