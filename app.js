@@ -63,7 +63,10 @@ app.get("/posts/:blogno", (req, res) => {
     const title = _.lowerCase(post.title)
     if(requestTitle === title)
       {
-        console.log(requestTitle)
+        res.render("post", {
+          requestTitle: post.title,
+          requestBody: post.content
+        })
       }
   });
 })
